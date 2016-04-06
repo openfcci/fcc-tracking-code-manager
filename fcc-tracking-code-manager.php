@@ -1,7 +1,7 @@
 <?php
   /**
-	* Plugin Name: Tracking Code
-	* Plugin URI: http://example.com/widget
+	* Plugin Name: FCC Tracking Code Manager
+	* Plugin URI: https://github.com/openfcci/fcc-tracking-code-manager
 	* Description: A plugin that places quantcast and google analytics tracking code in the footer of each blog on the install (as long as the blog's theme uses the 'wp_footer' action).
 	* Version: 1.1
 	* Author: Jed Limke
@@ -11,8 +11,7 @@
 	*/
 
 	// Add the code to the footer.
-	function tracking_code_footer_listener()
-	{ 
+	function tracking_code_footer_listener() {
 		$content = '
 			<!-- Start Quantcast tag -->
 				<script type="text/javascript">
@@ -35,7 +34,4 @@
 			';
 		echo $content;
 	}
-	
-	// Add a listener for redoing the adminbar hooks.
-	add_action('wp_footer', 'tracking_code_footer_listener', 99);
-?>
+	add_action('wp_footer', 'tracking_code_footer_listener', 99); // Add a listener for redoing the adminbar hooks.
